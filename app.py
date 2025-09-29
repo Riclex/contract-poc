@@ -8,7 +8,7 @@ TEMPLATE = "contract_template.docx"
 
 st.set_page_config(page_title="Contract Generator", page_icon="📄", layout="centered")
 
-st.title("📄 Contract Generator – SANO DIA (SU), SA")
+st.title("📄 Demo: Gerador de contractos – SANO DIA (SU), SA")
 st.markdown("Fill in the details below to generate a ready-to-sign contract (DOCX or PDF).")
 
 # Input form
@@ -30,7 +30,7 @@ with st.form("contract_form"):
     job_title = st.text_input("Job Title", "Assistente de Produção")
     start_date = st.text_input("Start Date", "11 de Junho de 2024")
     salary = st.text_input("Salary", "AOA 115.000,00")
-    salary_number = st.text_input("Salary (numeric)", "115000")
+    salary_number = st.text_input("Salary (por extenso)", "Cento e Quinze Mil Kwanzas")
     bank_name = st.text_input("Bank Name", "Banco Angolano de Investimento")
     iban = st.text_input("IBAN")
 
@@ -92,3 +92,4 @@ if submitted:
         if pdf_path and os.path.exists(pdf_path):
             with open(pdf_path, "rb") as f:
                 st.download_button("⬇️ Download PDF", f, file_name=os.path.basename(pdf_path))
+
