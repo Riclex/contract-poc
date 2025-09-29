@@ -4,7 +4,7 @@ import os
 import tempfile
 import subprocess
 
-TEMPLATE = "contract_template.docx"
+TEMPLATE = "contract_template(1).docx"
 
 st.set_page_config(page_title="Contract Generator", page_icon="📄", layout="centered")
 
@@ -92,4 +92,5 @@ if submitted:
         if pdf_path and os.path.exists(pdf_path):
             with open(pdf_path, "rb") as f:
                 st.download_button("⬇️ Download PDF", f, file_name=os.path.basename(pdf_path))
+
 
