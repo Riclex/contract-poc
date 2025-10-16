@@ -69,29 +69,30 @@ if submitted:
 
     # Temporary directory for file generation
     with tempfile.TemporaryDirectory() as tmpdir:
-        tpl = DocxTemplate(TEMPLATE)
-        tpl.render(context)
-        docx_path = os.path.join(tmpdir, f"CONTRACT_{employee_name or 'employee'}.docx")
-        tpl.save(docx_path)
+        #tpl = DocxTemplate(TEMPLATE)
+        #tpl.render(context)
+        #docx_path = os.path.join(tmpdir, f"CONTRACT_{employee_name or 'employee'}.docx")
+        #tpl.save(docx_path)
 
         # PDF conversion (optional, requires LibreOffice in Streamlit Cloud)
-        pdf_path = None
-        try:
-            subprocess.run([
-                "libreoffice", "--headless", "--convert-to", "pdf",
-                "--outdir", tmpdir, docx_path
-            ], check=True)
-            pdf_path = docx_path.replace(".docx", ".pdf")
-        except Exception:
-            pass
+        #pdf_path = None
+        #try:
+        #    subprocess.run([
+        #        "libreoffice", "--headless", "--convert-to", "pdf",
+        #        "--outdir", tmpdir, docx_path
+        #    ], check=True)
+        #    pdf_path = docx_path.replace(".docx", ".pdf")
+        #except Exception:
+        #    pass
 
         # Download buttons
-        with open(docx_path, "rb") as f:
-            st.download_button("⬇️ Download DOCX", f, file_name=os.path.basename(docx_path))
+        # with open(docx_path, "rb") as f:
+        #    st.download_button("⬇️ Download DOCX", f, file_name=os.path.basename(docx_path))
 
-        if pdf_path and os.path.exists(pdf_path):
-            with open(pdf_path, "rb") as f:
-                st.download_button("⬇️ Download PDF", f, file_name=os.path.basename(pdf_path))
+        # if pdf_path and os.path.exists(pdf_path):
+        #    with open(pdf_path, "rb") as f:
+        #        st.download_button("⬇️ Download PDF", f, file_name=os.path.basename(pdf_path))
+        st.error("Problemas no processamento. Contacte a equipa.")
 
 
 
