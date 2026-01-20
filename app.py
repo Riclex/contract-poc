@@ -76,15 +76,15 @@ with st.form("contract_form"):
         employee_address = st.text_input("Morada *", placeholder="Luanda, Viana")
         
     with col2:
-    employee_id_issue_date = st.text_input(
-        "Data de Emissão do BI *", 
-        placeholder="01/01/2020"
-    )
-    employee_id_expiry = st.text_input(
-        "Data de Validade do BI *", 
-        placeholder="01/01/2030"
-    )
-    iban = st.text_input("IBAN *", placeholder="AO06 0000 0000 0000 0000 0000 0")
+        employee_id_issue_date = st.text_input(
+            "Data de Emissão do BI *", 
+            placeholder="01/01/2020"
+        )
+        employee_id_expiry = st.text_input(
+            "Data de Validade do BI *", 
+            placeholder="01/01/2030"
+        )
+        iban = st.text_input("IBAN *", placeholder="AO06 0000 0000 0000 0000 0000 0")
 
     st.divider()
     st.subheader("Detalhes do Contrato")
@@ -241,6 +241,7 @@ if submitted:
 st.divider()
 st.caption("🔒 Todos os dados são processados localmente e não são armazenados.")
 st.caption("⚠️ Campos marcados com * são obrigatórios.")
+
 
 
 
